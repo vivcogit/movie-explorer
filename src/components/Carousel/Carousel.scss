@@ -1,0 +1,12 @@
+.Carousel {
+  font-size: 0;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  white-space: nowrap;
+
+  &-Wrapper {
+    overflow: scroll;
+    width: 100%;
+  }
+}
+  

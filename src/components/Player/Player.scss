@@ -1,0 +1,23 @@
+.Player {
+  height: 100vh;
+  width: 100vw;
+
+  &-Container {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-Video {
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  &-CloseButton {
+    font-size: 2em;
+    position: absolute;
+    right: 2em;
+    top: 2em;
+    z-index: 2;
+  }
+}

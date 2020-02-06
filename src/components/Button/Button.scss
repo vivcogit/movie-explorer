@@ -1,0 +1,39 @@
+.Button {
+  background: #0069ed;
+  border: 0;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+
+  &:hover,
+  &:focus {
+    background: #0053ba;
+  }
+
+  &:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
+
+  &:active {
+    transform: scale(.99);
+  }
+
+  &_backgroundTransparent,
+  &_backgroundTransparent:hover,
+  &_backgroundTransparent:focus {
+    background: transparent;
+    padding: 0;
+  }
+
+  &_black {
+    color: black;
+  }
+}

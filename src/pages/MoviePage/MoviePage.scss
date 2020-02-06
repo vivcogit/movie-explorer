@@ -1,0 +1,35 @@
+.MoviePage {
+  &-Wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  &-TextSide {
+    text-align: left;
+  }
+
+  &-Title {
+    text-align: center;
+  }
+
+  &-DetailsBlock {
+    margin: 0;
+    padding-left: 1em;
+  }
+
+  &-Metadata ul {
+    list-style: none;
+  }
+
+  &-ButtonsArea {
+    padding: 1em;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    &-Wrapper {
+      flex-direction: row;
+    }
+  }
+}

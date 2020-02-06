@@ -1,0 +1,28 @@
+.Overlay {
+  position: relative;
+
+  &-Content {
+    background-color: rgba($color: #008CBA, $alpha: .8);
+    bottom: 0;
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: .5em;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    top: 0;
+    transition: .5s ease;
+    visibility: hidden;
+    white-space: initial;
+    width: 100%;
+  }
+
+  &:hover &-Content {
+    opacity: 1;
+    visibility: visible;
+  }
+}
