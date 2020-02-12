@@ -26,5 +26,5 @@ jobs:
         host: ${{ secrets.HOST }}
         user: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        local: "build"
+        local: build
         remote: ${{ secrets.TARGET }}"
