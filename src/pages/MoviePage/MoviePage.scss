@@ -9,6 +9,15 @@
     text-align: left;
   }
 
+  &-TextSide,
+  &-PosterSide {
+    margin: 0 1em;
+  }
+  
+  &-PosterSide img {
+    max-width: 100%;
+  }
+
   &-Title {
     text-align: center;
   }
@@ -28,6 +37,9 @@
   }
 
   @media screen and (min-width: 768px) {
+    margin: 0 auto;
+    width: 80vw;
+
     &-Wrapper {
       flex-direction: row;
     }

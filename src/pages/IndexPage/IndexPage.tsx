@@ -32,10 +32,6 @@ function IndexPage() {
 
     return (
         <div className="IndexPage">
-            <header className="IndexPage-Header">
-                <h1>Movie Explorer</h1>
-            </header>
-
             <MoviePreviewList
                 title="Popular movies"
                 data={getData(popular)}

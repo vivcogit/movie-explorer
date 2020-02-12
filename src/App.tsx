@@ -5,6 +5,8 @@ import {
   Route,
 } from 'react-router-dom';
 
+import { Header } from './components/Header/Header';
+
 import { IndexPage } from './pages/IndexPage/IndexPage';
 import { MoviePage } from './pages/MoviePage/MoviePage';
 
@@ -12,8 +14,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
+    <Router>
+      <div className="App">
+        <Header />
+
         <Switch>
           <Route exact path="/">
             <IndexPage />
@@ -23,8 +27,8 @@ function App() {
             <MoviePage />
           </Route>
         </Switch>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
