@@ -21,10 +21,10 @@ jobs:
         npm ci
         npm run build
     - name: 'Deploy'
-      uses: horochx/deploy-via-scp@master
+      uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
-        user: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
-        local: build
-        remote: ${{ secrets.TARGET }}"
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.PASSWORD }}
+        source: "build/*"
+        target: ${{ secrets.TARGET }}
