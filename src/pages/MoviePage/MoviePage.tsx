@@ -5,12 +5,10 @@ import { apiProvider } from '../../providers/api';
 import { Button } from '../../components/Button/Button';
 import { Player } from '../../components/Player/Player';
 import * as dataReducer from '../../reducers/data';
+import { PLAYLIST_URL } from '../../utils/consts';
+import { Poster } from '../../components/Poster/Poster';
 
 import './MoviePage.scss';
-
-// Remove doubles
-const POSTER_PATH_BASE = 'https://image.tmdb.org/t/p/w342/';
-const PLAYLIST_URL = 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8';
 
 function MoviePage() {
     const { id } = useParams();
@@ -63,13 +61,14 @@ function MoviePage() {
         return (<Player src={PLAYLIST_URL} onClose={() => setIsShowPlayer(false)} />);
     }
 
+
     return (
         <div className="MoviePage">
             <div className="MoviePage-Wrapper">
                 <div className="MoviePage-PosterSide">
-                    <img
-                        src={POSTER_PATH_BASE + movie.data.poster_path}
-                        alt={movie.data.title}
+                    <Poster
+                        posterPath={movie.data.poster_path}
+                        title={movie.data.title}
                     />
                 </div>
 

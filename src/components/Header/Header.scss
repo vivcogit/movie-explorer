@@ -1,10 +1,16 @@
 .Header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: left;
-  margin: 1em auto;
-  width: 90%;
+  width: 100%;
+  background-color: #385D88;
+
+  &-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 1em 0;
+    text-align: left;
+    width: 90%;
+  }
 
   &-Logo {
     height: 2.5em;
@@ -17,8 +23,10 @@
   }
 
   @media screen and (min-width: 768px) {
-    width: 80vw;
-    margin: 1em auto;
+    &-Container {
+      margin: 0 auto;
+      width: 80vw;
+    }
 
     &-Logo {
       height: 4em;

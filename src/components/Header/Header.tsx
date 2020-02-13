@@ -8,13 +8,15 @@ import './Header.scss';
 function Header() {
     return (
         <header className="Header">
-            <Link to="/">
-                <img className="Header-Logo" src={logo} alt="Movie Explorer" />
-            </Link>
+            <div className="Header-Container">
+                <Link to="/">
+                    <img className="Header-Logo" src={logo} alt="Movie Explorer" />
+                </Link>
 
-            <Link to="/search">
-                <img className="Header-Search" src={search} alt="Search movies" />
-            </Link>
+                <Link to="/search">
+                    <img className="Header-Search" src={search} alt="Search movies" />
+                </Link>
+            </div>
         </header>
     );
 }
