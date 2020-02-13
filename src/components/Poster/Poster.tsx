@@ -6,7 +6,7 @@ import dummyPoster from './dummy_poster.png';
 
 interface PosterProps {
     posterPath: string | null,
-    title: string,
+    title: string | null | undefined,
     className?: string,
 }
 
@@ -18,7 +18,7 @@ function Poster(props: PosterProps) {
         : dummyPoster;
 
     return (
-        <img className={className} src={src} alt={title} />
+        <img className={className} src={src} alt={title || 'Not found'} />
     );
 }
 

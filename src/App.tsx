@@ -9,6 +9,7 @@ import { Header } from './components/Header/Header';
 
 import { IndexPage } from './pages/IndexPage/IndexPage';
 import { MoviePage } from './pages/MoviePage/MoviePage';
+import { SearchPage } from './pages/SearchPage/SearchPage';
 
 import './App.css';
 
@@ -25,6 +26,10 @@ function App() {
 
           <Route path="/movie/:id">
             <MoviePage />
+          </Route>
+
+          <Route path="/search">
+            <SearchPage />
           </Route>
         </Switch>
       </div>

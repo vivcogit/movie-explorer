@@ -27,9 +27,9 @@ function MoviePreviewList(props: MoviePreviewListProps) {
                 ? 'Data is fetching'
                 : (
                     <Carousel>
-                        {data.map((video) => (
-                            <CarouselItem key={video.id}>
-                                <MoviePreview video={video} />
+                        {data.map((movie) => (
+                            <CarouselItem key={movie.id}>
+                                <MoviePreview movie={movie} />
                             </CarouselItem>
                         ))}
                     </Carousel>

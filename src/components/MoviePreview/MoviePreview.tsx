@@ -7,21 +7,23 @@ import { Poster } from '../Poster/Poster';
 
 import './MoviePreview.scss';
 
-function MoviePreview(props: { video: Movie }) {
-    const { video } = props;
+function MoviePreview(props: { movie: Movie }) {
+    const { movie } = props;
+
+    const title = movie.title || movie.name;
     
     return (
-        <Link className="MoviePreview" to={`/movie/${video.id}`}>
-            <Overlay text={video.overview}>
+        <Link className="MoviePreview" to={`/movie/${movie.id}`}>
+            <Overlay text={movie.overview}>
                 <Poster
                     className="MoviePreview-Poster"
-                    posterPath={video.poster_path}
-                    title={video.title}
+                    posterPath={movie.poster_path}
+                    title={title}
                 />
             </Overlay>
 
             <div className="MoviePreview-Title">
-                {video.title}
+                {title}
             </div>
         </Link>
     );
