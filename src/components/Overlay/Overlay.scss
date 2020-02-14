@@ -1,5 +1,7 @@
 .Overlay {
+  height: 100%;
   position: relative;
+  width: 100%;
 
   &-Content {
     background-color: rgba($color: #008CBA, $alpha: .8);

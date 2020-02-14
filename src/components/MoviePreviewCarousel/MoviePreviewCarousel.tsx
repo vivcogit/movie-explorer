@@ -6,20 +6,20 @@ import { Movie } from '../../types/Movie';
 import { Carousel } from '../Carousel/Carousel';
 import { CarouselItem } from '../Carousel/CarouselItem';
 
-import './MoviePreviewList.scss';
+import './MoviePreviewCarousel.scss';
 
-type MoviePreviewListProps = {
+type MoviePreviewCarouselProps = {
     data: Array<Movie>,
     title: string,
     isFetching: boolean,
 };
 
-function MoviePreviewList(props: MoviePreviewListProps) {
+function MoviePreviewCarousel(props: MoviePreviewCarouselProps) {
     const { data, title, isFetching } = props;
 
     return (
-        <div className="MoviePreviewList">
-            <h2 className="MoviePreviewList-Title">
+        <div className="MoviePreviewCarousel">
+            <h2 className="MoviePreviewCarousel-Title">
                 {title}
             </h2>
 
@@ -39,4 +39,4 @@ function MoviePreviewList(props: MoviePreviewListProps) {
     );
 }
 
-export { MoviePreviewList };
+export { MoviePreviewCarousel };

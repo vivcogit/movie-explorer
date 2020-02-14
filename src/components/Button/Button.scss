@@ -1,6 +1,9 @@
+@import '../../utils/vars';
+
 .Button {
-  background: #0069ed;
+  background: $dark-blue;
   border: 0;
+  border-radius: 3px;
   color: #ffffff;
   cursor: pointer;
   display: inline-block;
@@ -34,6 +37,6 @@
   }
 
   &_black {
-    color: black;
+    color: $dark;
   }
 }

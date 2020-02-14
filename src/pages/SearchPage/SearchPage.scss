@@ -1,0 +1,32 @@
+@import '../../utils/vars';
+
+.SearchPage{
+  &-InputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 2em;
+  }
+
+  &-Input {
+    border: $dark solid 1px;
+    height: 2.4em;
+    padding: 0 .25em;
+  }
+
+  &-Submit {
+    padding: .5rem;
+  }
+
+  @media screen and (min-width: $breakpoint-mobile) {
+    &-InputContainer {
+      justify-content: center;
+    }
+
+    &-Input {
+      margin-right: 1em;
+      max-width: 70vw;
+      width: 40em;
+    }
+  }
+}

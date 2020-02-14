@@ -1,8 +1,9 @@
 .MoviePreview {
   display: inline-flex;
   flex-direction: column;
-  width: 300px;
+  height: 450px;
   text-decoration: none;
+  width: 300px;
 
   &-Poster {
     max-height: 100%;

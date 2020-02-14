@@ -1,0 +1,14 @@
+.MoviePreviewGrid {
+  &-Title {
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  &-Item {
+    display: inline-block;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    position: relative;
+  }
+}

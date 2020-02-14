@@ -10,7 +10,7 @@ export enum Genres {
     Documentary = 99,
 };
 
-export enum DiscoverTypes {
+export enum MovieTypes {
     Movies,
     Tv,
 };
@@ -25,7 +25,11 @@ class ApiProvider {
             MOVIE: `${ApiProvider.BASE_API_URL}discover/movie`,
             TV: `${ApiProvider.BASE_API_URL}discover/tv`,
         },
-        MOVIE: `${ApiProvider.BASE_API_URL}movie/`
+        MOVIE: `${ApiProvider.BASE_API_URL}movie/`,
+        SEARCH: {
+            MOVIE: `${ApiProvider.BASE_API_URL}search/movie`,
+            TV: `${ApiProvider.BASE_API_URL}search/tv`,
+        },
     }
 
     constructor(key: string) {
@@ -62,8 +66,8 @@ class ApiProvider {
         }
     }
 
-    async getDiscover(type: DiscoverTypes, genre: Genres | undefined = undefined, sortBy: SortBy = SortBy.PopularityDesc, page: number = 1) {
-        const url = type === DiscoverTypes.Movies
+    async getDiscover(type: MovieTypes, genre: Genres | undefined = undefined, sortBy: SortBy = SortBy.PopularityDesc, page: number = 1) {
+        const url = type === MovieTypes.Movies
             ? ApiProvider.URLS.DISCOVER.MOVIE
             : ApiProvider.URLS.DISCOVER.TV;
         const params = {
@@ -77,6 +81,14 @@ class ApiProvider {
 
     async getMovie(id: string): Promise<any> {
         return await this.get(ApiProvider.URLS.MOVIE + id);
+    }
+
+    async getSearch(type: MovieTypes, query: string) {
+        const url = type === MovieTypes.Movies
+            ? ApiProvider.URLS.SEARCH.MOVIE
+            : ApiProvider.URLS.SEARCH.TV;
+
+        return await this.get(url, { query });
     }
 }
 

@@ -29,7 +29,7 @@ function MoviePage() {
             return apiProvider.getMovie(id);
         }
 
-        dataReducer.initFunction(dispatch, fetchData);
+        dataReducer.fetch(dispatch, fetchData);
     }, [id]);
 
     if (movie.error) {

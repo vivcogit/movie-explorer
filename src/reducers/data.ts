@@ -1,6 +1,7 @@
 export interface ReducerState<T> {
     data: T,
     isFetching: boolean,
+    isInitialized: boolean,
     error: { code: number } | null,
 }
 
@@ -11,7 +12,7 @@ export function reducer<T>(state: ReducerState<T>, action: { type: string, paylo
         case 'start_loading':
             return { ...state, isFetching: true, error: null };
         case 'finish_loading':
-            return { ...state, data: action.payload, isFetching: false, error: null };
+            return { ...state, data: action.payload, isInitialized: true, isFetching: false, error: null };
         case 'error_loading':
             return { ...state, isFetching: false, error: action.payload };
         default:
@@ -22,10 +23,11 @@ export function reducer<T>(state: ReducerState<T>, action: { type: string, paylo
 export const defaultState = {
     data: null,
     isFetching: false,
+    isInitialized: false,
     error: null,
 };
 
-export async function initFunction(dispatch: React.Dispatch<any>, getter: () => Promise<any>) {
+export async function fetch(dispatch: React.Dispatch<any>, getter: () => Promise<any>) {
     dispatch({ type: 'start_loading', payload: undefined });
     try {
         const response = await getter();

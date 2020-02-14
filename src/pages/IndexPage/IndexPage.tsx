@@ -1,6 +1,6 @@
 import React from 'react';
-import { apiProvider, DiscoverTypes, Genres } from '../../providers/api';
-import { MoviePreviewList } from '../../components/MoviePreviewList/MoviePreviewList';
+import { apiProvider, MovieTypes, Genres } from '../../providers/api';
+import { MoviePreviewCarousel } from '../../components/MoviePreviewCarousel/MoviePreviewCarousel';
 import * as dataReducer from '../../reducers/data';
 
 type Data = {
@@ -20,10 +20,10 @@ function IndexPage() {
     React.useEffect(() => {
         async function fetchData() {
             await Promise.all([
-                dataReducer.initFunction(popularDispatch, apiProvider.getDiscover.bind(apiProvider, DiscoverTypes.Movies)),
-                dataReducer.initFunction(tvDispatch, apiProvider.getDiscover.bind(apiProvider, DiscoverTypes.Tv)),
-                dataReducer.initFunction(familyDispatch, apiProvider.getDiscover.bind(apiProvider, DiscoverTypes.Movies, Genres.Family)),
-                dataReducer.initFunction(documentaryDispatch, apiProvider.getDiscover.bind(apiProvider, DiscoverTypes.Movies, Genres.Documentary)),
+                dataReducer.fetch(popularDispatch, apiProvider.getDiscover.bind(apiProvider, MovieTypes.Movies)),
+                dataReducer.fetch(tvDispatch, apiProvider.getDiscover.bind(apiProvider, MovieTypes.Tv)),
+                dataReducer.fetch(familyDispatch, apiProvider.getDiscover.bind(apiProvider, MovieTypes.Movies, Genres.Family)),
+                dataReducer.fetch(documentaryDispatch, apiProvider.getDiscover.bind(apiProvider, MovieTypes.Movies, Genres.Documentary)),
             ]);
         }
 
@@ -32,25 +32,25 @@ function IndexPage() {
 
     return (
         <div className="IndexPage">
-            <MoviePreviewList
+            <MoviePreviewCarousel
                 title="Popular movies"
                 data={getData(popular)}
                 isFetching={popular.isFetching}
             />
 
-            <MoviePreviewList
+            <MoviePreviewCarousel
                 title="Popular TV"
                 data={getData(tv)}
                 isFetching={popular.isFetching}
             />
 
-            <MoviePreviewList
+            <MoviePreviewCarousel
                 title="Popular Family"
                 data={getData(family)}
                 isFetching={popular.isFetching}
             />
 
-            <MoviePreviewList
+            <MoviePreviewCarousel
                 title="Popular Documentary"
                 data={getData(documentary)}
                 isFetching={popular.isFetching}
