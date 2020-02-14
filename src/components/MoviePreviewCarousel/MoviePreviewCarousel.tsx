@@ -12,10 +12,27 @@ type MoviePreviewCarouselProps = {
     data: Array<Movie>,
     title: string,
     isFetching: boolean,
+    error?: number,
 };
 
 function MoviePreviewCarousel(props: MoviePreviewCarouselProps) {
-    const { data, title, isFetching } = props;
+    const {
+        data, title, isFetching, error,
+    } = props;
+
+    if (error) {
+        return (
+            <div className="MoviePreviewCarousel">
+                <h2 className="MoviePreviewCarousel-Title">
+                    {title}
+                </h2>
+
+                <p>
+                    Sorry, some error was happened
+                </p>
+            </div>
+        );
+    }
 
     return (
         <div className="MoviePreviewCarousel">

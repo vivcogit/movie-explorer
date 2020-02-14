@@ -36,24 +36,28 @@ function IndexPage() {
                 title="Popular movies"
                 data={getData(popular)}
                 isFetching={popular.isFetching}
+                error={popular.error?.code}
             />
 
             <MoviePreviewCarousel
                 title="Popular TV"
                 data={getData(tv)}
-                isFetching={popular.isFetching}
+                isFetching={tv.isFetching}
+                error={tv.error?.code}
             />
 
             <MoviePreviewCarousel
                 title="Popular Family"
                 data={getData(family)}
-                isFetching={popular.isFetching}
+                isFetching={family.isFetching}
+                error={family.error?.code}
             />
 
             <MoviePreviewCarousel
                 title="Popular Documentary"
                 data={getData(documentary)}
-                isFetching={popular.isFetching}
+                isFetching={documentary.isFetching}
+                error={documentary.error?.code}
             />
         </div>
     );
